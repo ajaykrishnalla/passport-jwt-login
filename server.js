@@ -5,12 +5,13 @@ const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
 const passport = require('passport');
+const cors    = require('cors');
 const app = express();
 
 ///body parser middleware
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
-
+app.use(cors());
 // DB Config
 const db = require('./config/keys').mongoURI;
 
